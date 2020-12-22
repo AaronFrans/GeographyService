@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainLayer", "DomainLayer\DomainLayer.csproj", "{559E06F4-7DB4-4018-8FDB-5DF3DD02DDE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainLayer", "DomainLayer\DomainLayer.csproj", "{559E06F4-7DB4-4018-8FDB-5DF3DD02DDE7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainAndDataLayerTests", "DomainAndDataLayerTests\DomainAndDataLayerTests.csproj", "{8CD38489-5F79-4D72-BD72-532959FC6822}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{A4C9F852-475D-4375-AB47-2B5E01DEDE79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{559E06F4-7DB4-4018-8FDB-5DF3DD02DDE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{559E06F4-7DB4-4018-8FDB-5DF3DD02DDE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{559E06F4-7DB4-4018-8FDB-5DF3DD02DDE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CD38489-5F79-4D72-BD72-532959FC6822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CD38489-5F79-4D72-BD72-532959FC6822}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CD38489-5F79-4D72-BD72-532959FC6822}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CD38489-5F79-4D72-BD72-532959FC6822}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4C9F852-475D-4375-AB47-2B5E01DEDE79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4C9F852-475D-4375-AB47-2B5E01DEDE79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4C9F852-475D-4375-AB47-2B5E01DEDE79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4C9F852-475D-4375-AB47-2B5E01DEDE79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
