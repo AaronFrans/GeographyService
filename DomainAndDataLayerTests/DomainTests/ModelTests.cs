@@ -4,10 +4,10 @@ using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace DomainAndDataLayerTests
+namespace DomainAndDataLayerTests.DomainTests
 {
     [TestClass]
-    public class DomainTests
+    public class ModelTests
     {
         [TestMethod]
         public void ContinentConstructor_ExceptionsTest()
@@ -193,6 +193,18 @@ namespace DomainAndDataLayerTests
             act = () => continent.RemoveCountry(null);
 
             act.Should().Throw<DomainException>().WithMessage("Een land mag niet null zijn");
+
+            string continentName2 = "Continent 2";
+            Continent continent2 = new Continent(continentName2);
+
+            string countryName2 = "Country 2";
+            int countryPopulation2 = 14000;
+            float countrySurface2 = 7500.50f;
+            Country country2 = new Country(countryPopulation2, countryName2, countrySurface2, continent2);
+
+            act = () => continent.RemoveCountry(country2);
+
+            act.Should().Throw<DomainException>().WithMessage("Het gegeven land is niet in dit continent.");
         }
 
         [TestMethod]

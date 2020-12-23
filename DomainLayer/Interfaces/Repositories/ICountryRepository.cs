@@ -22,39 +22,42 @@ namespace DomainLayer.Interfaces.Repositories
         /// <summary>
         /// Retireve a country from the database using the name.
         /// </summary>
-        /// <param name="name">Name of the country</param>
+        /// <param name="continentId">Id of the ccontinent the country belongs to.</param>
+        /// <param name="countryName">Name of the country</param>
         /// <returns>The found country</returns>
-        public Country GetCountry(string name);
+        public Country GetCountry(int continentId, string countryName);
 
         /// <summary>
         /// Retireve a country from the database using the name.
         /// </summary>
-        /// <param name="id">Id of the country</param>
+        /// <param name="continentId">Id of the ccontinent the country belongs to.</param>
+        /// <param name="countryId">Id of the country</param>
         /// <returns>The found country</returns>
-        public Country GetCountry(int id);
+        public Country GetCountry(int continentId, int countryId);
 
         /// <summary>
         /// Check if a continent is in the database using the name.
         /// </summary>
         /// <param name="name">Name of the country.</param>
         /// <returns>True if exists.</returns>
-        public bool IsInDatabaset(string name);
+        public bool IsInDatabase(string name);
 
         /// <summary>
         /// Check if a continent is in the database using the name.
         /// </summary>
         /// <param name="id">Id of the country.</param>
         /// <returns>True if exists.</returns>
-        public bool IsInDatabaset(int id);
+        public bool IsInDatabase(int id);
 
         /// <summary>
         /// Update a country in the database.
         /// </summary>
-        /// <param name="id">Id of the country to update</param>
+        /// <param name="countryId">Id of the country to update.</param>
+        /// <param name="continentId">Id of the continent the country belongs to.</param>
         /// <param name="countryName">The new name of the country.</param>
         /// <param name="countryPopulation">The new population of the country.</param>
         /// <param name="countrySurface">The new surface of the country.</param>
-        public void UpdateCountry(int id, string countryName, int countryPopulation, float countrySurface);
+        public void UpdateCountry(int countryId, int continentId, string countryName, int countryPopulation, float countrySurface);
 
         /// <summary>
         /// Deletes a country from the database.
@@ -65,8 +68,9 @@ namespace DomainLayer.Interfaces.Repositories
         /// <summary>
         /// Checks if a counbtry belongs to a continent.
         /// </summary>
-        /// <param name="ContinentId">Id of the continent.</param>
-        ///  <param name="countryId">Id of the country.</param>
-        public void BelongsToContinent(int ContinentId, int countryId);
+        /// <param name="continentId">Id of the continent.</param>
+        /// <param name="countryId">Id of the country.</param>
+        /// <returns>True if it belongs.</returns>
+        public bool BelongsToContinent(int continentId, int countryId);
     }
 }

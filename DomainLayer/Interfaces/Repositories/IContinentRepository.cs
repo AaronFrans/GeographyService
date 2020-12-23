@@ -57,5 +57,12 @@ namespace DomainLayer.Interfaces.Repositories
         /// </summary>
         /// <param name="id">Id of the continent to delete.</param>
         public void DeleteContinent(int id);
+
+        /// <summary>
+        /// Check if a given continent still has countries.
+        /// </summary>
+        /// <param name="id">Id of the continent to check.</param>
+        /// <returns>True if not empty.</returns>
+        public bool HasCountries(int id);
     }
 }

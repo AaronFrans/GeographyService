@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace DataLayer.DataModel
@@ -10,10 +11,11 @@ namespace DataLayer.DataModel
     public class DContinent
     {
         #region Properties
-        
+
         /// <summary>
         /// Id of the continent.
         /// </summary>
+        [Key]
         public int Id { get; set; }
         /// <summary>
         /// Name of the continent.
@@ -26,7 +28,7 @@ namespace DataLayer.DataModel
         /// <summary>
         /// A collection of countries belonging to the continent.
         /// </summary>
-        public List<DCountry> Countries = new List<DCountry>();
+        public List<DCountry> Countries { get; set; } = new List<DCountry>();
 
         #endregion
 

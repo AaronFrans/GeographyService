@@ -8,7 +8,7 @@ namespace DomainLayer.Interfaces
     /// <summary>
     /// Gives commands to the database.
     /// </summary>
-    interface IUnitOfWork
+    public interface IUnitOfWork
     {
         /// <summary>
         /// Countries in the database.

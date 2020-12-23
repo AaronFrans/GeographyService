@@ -22,7 +22,18 @@ namespace DomainLayer.Model
         /// <summary>
         /// Population of the continent.
         /// </summary>
-        public int Population { get; private set; }
+        public int Population
+        {
+            get
+            {
+                int toReturn = 0;
+                foreach (Country c in countries)
+                {
+                    toReturn += c.Population;
+                }
+                return toReturn;
+            }
+        }
         /// <summary>
         /// A collection of countries belonging to the continent.
         /// </summary>
@@ -42,7 +53,6 @@ namespace DomainLayer.Model
         public Continent(string name)
         {
             SetName(name);
-            Population = 0;
         }
 
         #endregion
@@ -107,7 +117,6 @@ namespace DomainLayer.Model
                 if (!countries.Contains(country))
                 {
                     countries.Add(country);
-                    Population += country.Population;
                 }
 
             }
@@ -116,7 +125,6 @@ namespace DomainLayer.Model
                 if (!countries.Contains(country))
                 {
                     countries.Add(country);
-                    Population += country.Population;
                 }
                 country.SetContinent(this);
 
@@ -138,9 +146,7 @@ namespace DomainLayer.Model
                 throw new DomainException("Een land mag niet null zijn");
 
 
-            if (countries.Remove(country))
-                Population -= country.Population;
-            else
+            if (!countries.Remove(country))
                 throw new DomainException("Het gegeven land is niet in dit continent.");
 
 

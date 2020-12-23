@@ -1,6 +1,7 @@
 ﻿using DomainLayer.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace DataLayer.DataModel
@@ -15,6 +16,7 @@ namespace DataLayer.DataModel
         /// <summary>
         /// Id of the country.
         /// </summary>
+        [Key]
         public int Id { get; set; }
         /// <summary>
         /// Population of the country.
