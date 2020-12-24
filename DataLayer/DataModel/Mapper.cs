@@ -6,7 +6,7 @@ using System.Text;
 namespace DataLayer.DataModel
 {
     /// <summary>
-    /// Maps Data classes to the Domain equivalent.
+    /// Maps Data classes to the Domain equivalent and reverse.
     /// </summary>
     public class Mapper
     {

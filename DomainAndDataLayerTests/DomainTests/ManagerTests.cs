@@ -87,8 +87,6 @@ namespace DomainAndDataLayerTests.DomainTests
         {
             Manager manager = new Manager(new UnitOfWork(new GeographyContextTest(true)));
 
-            Continent continentFromDB = manager.GetContinent(2);
-
             manager.GetContinent(2).Name.Should().Be("continent 1");
 
             manager.UpdateContinent(2, new Continent("continent 50"));

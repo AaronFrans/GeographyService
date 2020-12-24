@@ -26,7 +26,7 @@ namespace DataLayer.DataModel
         /// </summary>
         public int Population { get;  set; }
         /// <summary>
-        /// A collection of countries belonging to the continent.
+        /// A collection of countries belonging to the country.
         /// </summary>
         public List<DCountry> Countries { get; set; } = new List<DCountry>();
 

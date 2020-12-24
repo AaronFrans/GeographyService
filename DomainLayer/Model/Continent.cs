@@ -35,7 +35,7 @@ namespace DomainLayer.Model
             }
         }
         /// <summary>
-        /// A collection of countries belonging to the continent.
+        /// A collection of countries belonging to the country.
         /// </summary>
         private List<Country> countries = new List<Country>();
         /// <summary>
@@ -89,9 +89,7 @@ namespace DomainLayer.Model
         public override bool Equals(object obj)
         {
             return obj is Continent continent &&
-                   Name == continent.Name &&
-                   Population == continent.Population &&
-                   EqualityComparer<List<Country>>.Default.Equals(countries, continent.countries);
+                   Name == continent.Name;
         }
 
         public override int GetHashCode()
