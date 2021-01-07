@@ -39,7 +39,7 @@ namespace RestLayer.Controllers
         {
             try
             {
-                logger.LogInformation(0101, "PostContinent called.");
+                logger.LogInformation(0101, DateTime.Now + "PostContinent called.");
                 if (input == null)
                     throw new RestException("Het ingegeven continent mag niet null zijn");
 
@@ -49,7 +49,7 @@ namespace RestLayer.Controllers
             }
             catch (Exception ex)
             {
-                logger.LogError(0101, "PostContinent failed.");
+                logger.LogError(0101, DateTime.Now + "PostContinent failed.");
 
                 return BadRequest(ex.Message);
             }
@@ -67,13 +67,13 @@ namespace RestLayer.Controllers
         {
             try
             {
-                logger.LogInformation(0102, "GetContinent called.");
+                logger.LogInformation(0102, DateTime.Now + "GetContinent called.");
                 return Ok(Mapper.ToRContinentOutput(manager.GetContinent(id), hostURL));
 
             }
             catch (Exception ex)
             {
-                logger.LogError(0102, "GetContinent failed.");
+                logger.LogError(0102, DateTime.Now + "GetContinent failed.");
 
                 if (ex.Message == "Er is geen continent met het gegeven id.")
                     return NotFound(ex.Message);
@@ -93,7 +93,7 @@ namespace RestLayer.Controllers
         {
             try
             {
-                logger.LogInformation(0103, "PutContinent called.");
+                logger.LogInformation(0103, DateTime.Now + "PutContinent called.");
                 if (input == null)
                 {
                     throw new RestException("Het ingegeven continent mag niet null zijn");
@@ -110,7 +110,7 @@ namespace RestLayer.Controllers
             }
             catch (Exception ex)
             {
-                logger.LogError(0103, "PutContinent failed.");
+                logger.LogError(0103, DateTime.Now + "PutContinent failed.");
 
                 if (ex.Message == "Er is geen continent met het gegeven id.")
                     return NotFound(ex.Message);
@@ -130,13 +130,13 @@ namespace RestLayer.Controllers
         {
             try
             {
-                logger.LogInformation(0104, "DeleteContinent called.");
+                logger.LogInformation(0104, DateTime.Now + "DeleteContinent called.");
                 manager.DeleteContinent(id);
                 return NoContent();
             }
             catch (Exception ex)
             {
-                logger.LogError(0104, "DeleteContinent failed.");
+                logger.LogError(0104, DateTime.Now + "DeleteContinent failed.");
 
                 if (ex.Message == "Er is geen continent met het gegeven id.")
                     return NotFound(ex.Message);
@@ -161,7 +161,7 @@ namespace RestLayer.Controllers
         {
             try
             {
-                logger.LogInformation(0201, "PostCountry called.");
+                logger.LogInformation(0201, DateTime.Now + "PostCountry called.");
 
                 if (input == null)
                     throw new RestException("Het ingegeven land mag niet null zijn");
@@ -175,7 +175,7 @@ namespace RestLayer.Controllers
             }
             catch (Exception ex)
             {
-                logger.LogError(0201, "PostCountry failed.");
+                logger.LogError(0201, DateTime.Now + "PostCountry failed.");
 
                 return BadRequest(ex.Message);
             }
@@ -194,13 +194,13 @@ namespace RestLayer.Controllers
         {
             try
             {
-                logger.LogInformation(0202, "GetCountry called.");
+                logger.LogInformation(0202, DateTime.Now + "GetCountry called.");
 
                 return Ok(Mapper.ToRCountryOutput(manager.GetCountry(continentId, countryId), hostURL));
             }
             catch (Exception ex)
             {
-                logger.LogError(0202, "GetCountry failed.");
+                logger.LogError(0202, DateTime.Now + "GetCountry failed.");
 
                 if (ex.Message == "Er is geen continent met het gegeven id.")
                     return NotFound(ex.Message);
@@ -224,7 +224,7 @@ namespace RestLayer.Controllers
         {
             try
             {
-                logger.LogInformation(0203, "PutCountry called.");
+                logger.LogInformation(0203, DateTime.Now + "PutCountry called.");
 
                 if (input == null)
                 {
@@ -245,7 +245,7 @@ namespace RestLayer.Controllers
             }
             catch (Exception ex)
             {
-                logger.LogError(0203, "PutCountry failed.");
+                logger.LogError(0203, DateTime.Now + "PutCountry failed.");
 
                 if (ex.Message == "Er is geen continent met het gegeven id.")
                     return NotFound(ex.Message);
@@ -268,7 +268,7 @@ namespace RestLayer.Controllers
         {
             try
             {
-                logger.LogInformation(0204, "DeleteCountry called.");
+                logger.LogInformation(0204, DateTime.Now + "DeleteCountry called.");
 
                 manager.DeleteCountry(continentId, countryId);
 
@@ -276,7 +276,7 @@ namespace RestLayer.Controllers
             }
             catch (Exception ex)
             {
-                logger.LogError(0204, "DeleteCountry failed.");
+                logger.LogError(0204, DateTime.Now + "DeleteCountry failed.");
 
                 if (ex.Message == "Er is geen continent met het gegeven id.")
                     return NotFound(ex.Message);
